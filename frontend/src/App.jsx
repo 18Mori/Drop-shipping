@@ -5,6 +5,7 @@ import Register from "./pages/Register"
 import Home from "./pages/Home"
 import NotFound from "./pages/Notfound"
 import ProtectedRoute from "./components/ProtectedRoute"
+import UsersTable from "./components/UsersTable";
 
 function Logout() {
   localStorage.clear()
@@ -28,6 +29,10 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+                    path="/users"
+                    element={<ProtectedRoute><UsersTable /></ProtectedRoute>}
+                />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<RegisterAndLogout />} />
